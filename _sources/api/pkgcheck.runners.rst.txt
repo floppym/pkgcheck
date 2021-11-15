@@ -1,0 +1,7 @@
+pkgcheck.runners module
+=======================
+
+.. automodule:: pkgcheck.runners
+   :members:
+   :undoc-members:
+   :show-inheritance:

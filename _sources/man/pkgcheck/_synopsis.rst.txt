@@ -1,0 +1,4 @@
+Synopsis
+========
+
+pkgcheck [-h] [--version] [--debug] [-q] [-v] [--color BOOLEAN] {cache,ci,replay,scan,show} ...

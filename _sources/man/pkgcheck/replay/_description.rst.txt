@@ -1,0 +1,8 @@
+Description
+-----------
+
+Replay previous json result streams, feeding the results into a reporter.
+
+Useful if you need to delay acting on results until it can be done in
+one minimal window, e.g. updating a database, or want to generate
+several different reports.

@@ -1,0 +1,5 @@
+Description
+-----------
+
+Various types of caches are used by pkgcheck. This command supports
+running operations on them including updates and removals.

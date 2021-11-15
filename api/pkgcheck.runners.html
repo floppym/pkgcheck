@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pkgcheck.runners module &#8212; pkgcheck master documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pkgcheck master documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pkgcheck.runners module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-pkgcheck.runners">
+<span id="pkgcheck-runners-module"></span><h1>pkgcheck.runners module<a class="headerlink" href="#module-pkgcheck.runners" title="Permalink to this headline">¶</a></h1>
+<p>Check runners.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.runners.AsyncCheckRunner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.runners.</span></span><span class="sig-name descname"><span class="pre">AsyncCheckRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checks</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/runners.html#AsyncCheckRunner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.runners.AsyncCheckRunner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pkgcheck.runners.CheckRunner" title="pkgcheck.runners.CheckRunner"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.runners.CheckRunner</span></code></a></p>
+<p>Generic runner for asynchronous checks.</p>
+<p>Checks that would otherwise block for uncertain amounts of time due to I/O
+or network access are run in separate threads, queuing any relevant results
+on completion.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.runners.AsyncCheckRunner.schedule">
+<span class="sig-name descname"><span class="pre">schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">executor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">futures</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restrict=&lt;AlwaysBool</span> <span class="pre">always</span> <span class="pre">True</span> <span class="pre">&#64;0x7fcc62b90580&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/runners.html#AsyncCheckRunner.schedule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.runners.AsyncCheckRunner.schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedule all checks to run via the given executor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.runners.AsyncCheckRunner.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'async'</span></em><a class="headerlink" href="#pkgcheck.runners.AsyncCheckRunner.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.runners.CheckRunner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.runners.</span></span><span class="sig-name descname"><span class="pre">CheckRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">options</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checks</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/runners.html#CheckRunner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.runners.CheckRunner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Generic runner for checks.</p>
+<p>Checks are run in order of priority. Some checks need to be run before
+others if both are enabled due to package attribute caching in pkgcore,
+e.g. checks that test depset parsing need to come before other checks that
+use the parsed deps otherwise results from parsing errors could be missed.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.runners.CheckRunner.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pkgcheck.runners.CheckRunner.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.runners.RepoCheckRunner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.runners.</span></span><span class="sig-name descname"><span class="pre">RepoCheckRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/runners.html#RepoCheckRunner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.runners.RepoCheckRunner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pkgcheck.runners.SyncCheckRunner" title="pkgcheck.runners.SyncCheckRunner"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.runners.SyncCheckRunner</span></code></a></p>
+<p>Generic runner for checks run across an entire repo.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.runners.RepoCheckRunner.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/runners.html#RepoCheckRunner.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.runners.RepoCheckRunner.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run registered checks against all matching source items.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.runners.SyncCheckRunner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.runners.</span></span><span class="sig-name descname"><span class="pre">SyncCheckRunner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/runners.html#SyncCheckRunner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.runners.SyncCheckRunner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pkgcheck.runners.CheckRunner" title="pkgcheck.runners.CheckRunner"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.runners.CheckRunner</span></code></a></p>
+<p>Generic runner for synchronous checks.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.runners.SyncCheckRunner.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">restrict=&lt;AlwaysBool</span> <span class="pre">always</span> <span class="pre">True</span> <span class="pre">&#64;0x7fcc62b90580&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/runners.html#SyncCheckRunner.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.runners.SyncCheckRunner.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run registered checks against all matching source items.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.runners.SyncCheckRunner.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'sync'</span></em><a class="headerlink" href="#pkgcheck.runners.SyncCheckRunner.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/pkgcheck.runners.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pkgcheck master documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pkgcheck.runners module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2006-2021, pkgcheck contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.0.
+    </div>
+  </body>
+</html>

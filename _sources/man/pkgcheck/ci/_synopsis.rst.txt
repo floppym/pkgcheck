@@ -1,0 +1,4 @@
+Synopsis
+--------
+
+pkgcheck ci [-h] [--debug] [-q] [-v] [--color BOOLEAN] [--failures FAILURES]

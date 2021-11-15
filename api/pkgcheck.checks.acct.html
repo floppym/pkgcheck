@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pkgcheck.checks.acct module &#8212; pkgcheck master documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pkgcheck master documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pkgcheck.checks.acct module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-pkgcheck.checks.acct">
+<span id="pkgcheck-checks-acct-module"></span><h1>pkgcheck.checks.acct module<a class="headerlink" href="#module-pkgcheck.checks.acct" title="Permalink to this headline">¶</a></h1>
+<p>Various checks for acct-group and acct-user packages.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.AcctCheck">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.acct.</span></span><span class="sig-name descname"><span class="pre">AcctCheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/acct.html#AcctCheck"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.acct.AcctCheck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.checks.html#pkgcheck.checks.GentooRepoCheck" title="pkgcheck.checks.GentooRepoCheck"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.checks.GentooRepoCheck</span></code></a>, <a class="reference internal" href="pkgcheck.checks.html#pkgcheck.checks.RepoCheck" title="pkgcheck.checks.RepoCheck"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.checks.RepoCheck</span></code></a></p>
+<p>Various checks for acct-* packages.</p>
+<p>Verify that acct-* packages do not use conflicting, invalid or out-of-range
+UIDs/GIDs.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.AcctCheck.feed">
+<span class="sig-name descname"><span class="pre">feed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/acct.html#AcctCheck.feed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.acct.AcctCheck.feed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle functionality against the passed in item.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.AcctCheck.finish">
+<span class="sig-name descname"><span class="pre">finish</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/acct.html#AcctCheck.finish"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.acct.AcctCheck.finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do cleanup and yield final results here.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.AcctCheck.known_results">
+<span class="sig-name descname"><span class="pre">known_results</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({&lt;class</span> <span class="pre">'pkgcheck.checks.acct.OutsideRangeAccountIdentifier'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.acct.ConflictingAccountIdentifiers'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.acct.MissingAccountIdentifier'&gt;})</span></em><a class="headerlink" href="#pkgcheck.checks.acct.AcctCheck.known_results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.AcctCheck.scope">
+<span class="sig-name descname"><span class="pre">scope</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PackageScope</span> <span class="pre">desc='repo'</span> <span class="pre">&#64;0x7fcc62a7a4c0&gt;</span></em><a class="headerlink" href="#pkgcheck.checks.acct.AcctCheck.scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.ConflictingAccountIdentifiers">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.acct.</span></span><span class="sig-name descname"><span class="pre">ConflictingAccountIdentifiers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pkgs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/acct.html#ConflictingAccountIdentifiers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.acct.ConflictingAccountIdentifiers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Error" title="pkgcheck.results.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Error</span></code></a></p>
+<p>Same UID/GID is used by multiple packages.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.ConflictingAccountIdentifiers.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.acct.ConflictingAccountIdentifiers.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.ConflictingAccountIdentifiers.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ConflictingAccountIdentifiers'</span></em><a class="headerlink" href="#pkgcheck.checks.acct.ConflictingAccountIdentifiers.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.MissingAccountIdentifier">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.acct.</span></span><span class="sig-name descname"><span class="pre">MissingAccountIdentifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/acct.html#MissingAccountIdentifier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.acct.MissingAccountIdentifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.VersionResult" title="pkgcheck.results.VersionResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.VersionResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Warning" title="pkgcheck.results.Warning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Warning</span></code></a></p>
+<p>UID/GID can not be found in account package.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.MissingAccountIdentifier.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.acct.MissingAccountIdentifier.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.MissingAccountIdentifier.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'MissingAccountIdentifier'</span></em><a class="headerlink" href="#pkgcheck.checks.acct.MissingAccountIdentifier.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.OutsideRangeAccountIdentifier">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.acct.</span></span><span class="sig-name descname"><span class="pre">OutsideRangeAccountIdentifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/acct.html#OutsideRangeAccountIdentifier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.acct.OutsideRangeAccountIdentifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.VersionResult" title="pkgcheck.results.VersionResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.VersionResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Error" title="pkgcheck.results.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Error</span></code></a></p>
+<p>UID/GID outside allowed allocation range.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.OutsideRangeAccountIdentifier.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.acct.OutsideRangeAccountIdentifier.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.acct.OutsideRangeAccountIdentifier.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'OutsideRangeAccountIdentifier'</span></em><a class="headerlink" href="#pkgcheck.checks.acct.OutsideRangeAccountIdentifier.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/pkgcheck.checks.acct.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pkgcheck master documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pkgcheck.checks.acct module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2006-2021, pkgcheck contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.0.
+    </div>
+  </body>
+</html>

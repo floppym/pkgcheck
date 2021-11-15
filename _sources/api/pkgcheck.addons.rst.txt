@@ -1,0 +1,22 @@
+pkgcheck.addons package
+=======================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pkgcheck.addons.caches
+   pkgcheck.addons.eclass
+   pkgcheck.addons.git
+   pkgcheck.addons.net
+   pkgcheck.addons.profiles
+
+Module contents
+---------------
+
+.. automodule:: pkgcheck.addons
+   :members:
+   :undoc-members:
+   :show-inheritance:

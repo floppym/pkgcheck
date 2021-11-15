@@ -1,0 +1,7 @@
+pkgcheck.addons.net module
+==========================
+
+.. automodule:: pkgcheck.addons.net
+   :members:
+   :undoc-members:
+   :show-inheritance:

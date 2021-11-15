@@ -1,0 +1,10 @@
+pkgcheck.bash package
+=====================
+
+Module contents
+---------------
+
+.. automodule:: pkgcheck.bash
+   :members:
+   :undoc-members:
+   :show-inheritance:

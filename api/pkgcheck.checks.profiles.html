@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pkgcheck.checks.profiles module &#8212; pkgcheck master documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pkgcheck master documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pkgcheck.checks.profiles module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-pkgcheck.checks.profiles">
+<span id="pkgcheck-checks-profiles-module"></span><h1>pkgcheck.checks.profiles module<a class="headerlink" href="#module-pkgcheck.checks.profiles" title="Permalink to this headline">¶</a></h1>
+<p>Various profile-related checks.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ArchesWithoutProfiles">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">ArchesWithoutProfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arches</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#ArchesWithoutProfiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.ArchesWithoutProfiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Warning" title="pkgcheck.results.Warning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Warning</span></code></a></p>
+<p>Arches without corresponding profile listings.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ArchesWithoutProfiles.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.profiles.ArchesWithoutProfiles.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ArchesWithoutProfiles.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ArchesWithoutProfiles'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.ArchesWithoutProfiles.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.BannedProfileEapi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">BannedProfileEapi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">profile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eapi</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#BannedProfileEapi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.BannedProfileEapi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.checks.profiles._ProfileEapiResult</span></code>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Error" title="pkgcheck.results.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Error</span></code></a></p>
+<p>Profile has an EAPI that is banned in the repository.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.BannedProfileEapi.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'BannedProfileEapi'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.BannedProfileEapi.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.DeprecatedProfileEapi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">DeprecatedProfileEapi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">profile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eapi</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#DeprecatedProfileEapi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.DeprecatedProfileEapi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.checks.profiles._ProfileEapiResult</span></code>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Warning" title="pkgcheck.results.Warning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Warning</span></code></a></p>
+<p>Profile has an EAPI that is deprecated in the repository.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.DeprecatedProfileEapi.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'DeprecatedProfileEapi'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.DeprecatedProfileEapi.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.LaggingProfileEapi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">LaggingProfileEapi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">profile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eapi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_eapi</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#LaggingProfileEapi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.LaggingProfileEapi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Warning" title="pkgcheck.results.Warning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Warning</span></code></a></p>
+<p>Profile has an EAPI that is older than one of its parents.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.LaggingProfileEapi.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.profiles.LaggingProfileEapi.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.LaggingProfileEapi.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'LaggingProfileEapi'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.LaggingProfileEapi.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.NonexistentCategories">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">NonexistentCategories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">categories</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#NonexistentCategories"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.NonexistentCategories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Warning" title="pkgcheck.results.Warning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Warning</span></code></a></p>
+<p>Category entries in profiles/categories that don’t exist in the repo.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.NonexistentCategories.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.profiles.NonexistentCategories.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.NonexistentCategories.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'NonexistentCategories'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.NonexistentCategories.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.NonexistentProfilePath">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">NonexistentProfilePath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#NonexistentProfilePath"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.NonexistentProfilePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Error" title="pkgcheck.results.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Error</span></code></a></p>
+<p>Specified profile path in profiles.desc doesn’t exist.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.NonexistentProfilePath.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.profiles.NonexistentProfilePath.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.NonexistentProfilePath.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'NonexistentProfilePath'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.NonexistentProfilePath.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ProfileError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">ProfileError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#ProfileError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.ProfileError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.LogError" title="pkgcheck.results.LogError"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.LogError</span></code></a></p>
+<p>Erroneously formatted data in various profile files.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ProfileError.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ProfileError'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.ProfileError.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ProfileWarning">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">ProfileWarning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#ProfileWarning"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.ProfileWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.LogWarning" title="pkgcheck.results.LogWarning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.LogWarning</span></code></a></p>
+<p>Badly formatted data in various profile files.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ProfileWarning.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'ProfileWarning'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.ProfileWarning.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ProfilesCheck">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">ProfilesCheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_addon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords_addon</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#ProfilesCheck"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.ProfilesCheck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.checks.html#pkgcheck.checks.Check" title="pkgcheck.checks.Check"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.checks.Check</span></code></a></p>
+<p>Scan repo profiles for unknown flags/packages.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ProfilesCheck.feed">
+<span class="sig-name descname"><span class="pre">feed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">profile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#ProfilesCheck.feed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.ProfilesCheck.feed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle functionality against the passed in item.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ProfilesCheck.known_files">
+<span class="sig-name descname"><span class="pre">known_files</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'deprecated':</span> <span class="pre">('deprecated',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._deprecated&gt;),</span> <span class="pre">'eapi':</span> <span class="pre">('eapi',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pull_attr&gt;),</span> <span class="pre">'make.defaults':</span> <span class="pre">('make_defaults',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._make_defaults&gt;),</span> <span class="pre">'package.accept_keywords':</span> <span class="pre">('accept_keywords',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pkg_keywords&gt;),</span> <span class="pre">'package.deprecated':</span> <span class="pre">('pkg_deprecated',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pkg_atoms&gt;),</span> <span class="pre">'package.keywords':</span> <span class="pre">('keywords',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pkg_keywords&gt;),</span> <span class="pre">'package.mask':</span> <span class="pre">('masks',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pkg_atoms&gt;),</span> <span class="pre">'package.unmask':</span> <span class="pre">('unmasks',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pkg_atoms&gt;),</span> <span class="pre">'package.use':</span> <span class="pre">('pkg_use',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pkg_use&gt;),</span> <span class="pre">'package.use.force':</span> <span class="pre">('pkg_use_force',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pkg_use&gt;),</span> <span class="pre">'package.use.mask':</span> <span class="pre">('pkg_use_mask',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pkg_use&gt;),</span> <span class="pre">'package.use.stable.force':</span> <span class="pre">('pkg_use_stable_force',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pkg_use&gt;),</span> <span class="pre">'package.use.stable.mask':</span> <span class="pre">('pkg_use_stable_mask',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pkg_use&gt;),</span> <span class="pre">'packages':</span> <span class="pre">('packages',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pkg_atoms&gt;),</span> <span class="pre">'parent':</span> <span class="pre">('parents',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._pull_attr&gt;),</span> <span class="pre">'use.force':</span> <span class="pre">('use_force',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._use&gt;),</span> <span class="pre">'use.mask':</span> <span class="pre">('use_mask',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._use&gt;),</span> <span class="pre">'use.stable.force':</span> <span class="pre">('use_stable_force',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._use&gt;),</span> <span class="pre">'use.stable.mask':</span> <span class="pre">('use_stable_mask',</span> <span class="pre">&lt;function</span> <span class="pre">ProfilesCheck._use&gt;)}</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.ProfilesCheck.known_files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ProfilesCheck.known_results">
+<span class="sig-name descname"><span class="pre">known_results</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.UnknownProfilePackageUse'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.UnknownProfilePackage'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.ProfileError'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.ProfileWarning'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.UnknownProfileUseExpand'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.UnknownProfilePackageKeywords'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.UnknownProfileUse'&gt;})</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.ProfilesCheck.known_results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ProfilesCheck.required_addons">
+<span class="sig-name descname"><span class="pre">required_addons</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;class</span> <span class="pre">'pkgcheck.addons.UseAddon'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.addons.KeywordsAddon'&gt;)</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.ProfilesCheck.required_addons" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.ProfilesCheck.scope">
+<span class="sig-name descname"><span class="pre">scope</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LocationScope</span> <span class="pre">desc='profile_node'</span> <span class="pre">&#64;0x7fcc61fb4cd0&gt;</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.ProfilesCheck.scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.RepoProfilesCheck">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">RepoProfilesCheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile_addon</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#RepoProfilesCheck"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.RepoProfilesCheck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.checks.html#pkgcheck.checks.RepoCheck" title="pkgcheck.checks.RepoCheck"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.checks.RepoCheck</span></code></a></p>
+<p>Scan repo for various profiles directory issues.</p>
+<p>Including unknown arches in profiles, arches without profiles, and unknown
+categories.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.RepoProfilesCheck.finish">
+<span class="sig-name descname"><span class="pre">finish</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#RepoProfilesCheck.finish"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.RepoProfilesCheck.finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do cleanup and yield final results here.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.RepoProfilesCheck.known_profile_statuses">
+<span class="sig-name descname"><span class="pre">known_profile_statuses</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'dev',</span> <span class="pre">'exp',</span> <span class="pre">'stable'})</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.RepoProfilesCheck.known_profile_statuses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.RepoProfilesCheck.known_results">
+<span class="sig-name descname"><span class="pre">known_results</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.BannedProfileEapi'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.UnusedProfileDirs'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.ProfileError'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.ProfileWarning'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.NonexistentCategories'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.UnknownCategoryDirs'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.DeprecatedProfileEapi'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.NonexistentProfilePath'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.LaggingProfileEapi'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'pkgcheck.checks.profiles.ArchesWithoutProfiles'&gt;})</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.RepoProfilesCheck.known_results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.RepoProfilesCheck.required_addons">
+<span class="sig-name descname"><span class="pre">required_addons</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;class</span> <span class="pre">'pkgcheck.addons.profiles.ProfileAddon'&gt;,)</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.RepoProfilesCheck.required_addons" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.RepoProfilesCheck.scope">
+<span class="sig-name descname"><span class="pre">scope</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LocationScope</span> <span class="pre">desc='profiles'</span> <span class="pre">&#64;0x7fcc61fb4c10&gt;</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.RepoProfilesCheck.scope" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownCategoryDirs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">UnknownCategoryDirs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#UnknownCategoryDirs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownCategoryDirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Warning" title="pkgcheck.results.Warning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Warning</span></code></a></p>
+<p>Category directories that aren’t listed in a repo’s categories.</p>
+<p>Or the categories of the repo’s masters as well.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownCategoryDirs.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownCategoryDirs.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownCategoryDirs.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'UnknownCategoryDirs'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownCategoryDirs.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfilePackage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">UnknownProfilePackage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atom</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#UnknownProfilePackage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfilePackage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Warning" title="pkgcheck.results.Warning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Warning</span></code></a></p>
+<p>Profile files includes package entry that doesn’t exist in the repo.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfilePackage.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfilePackage.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfilePackage.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'UnknownProfilePackage'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfilePackage.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfilePackageKeywords">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">UnknownProfilePackageKeywords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keywords</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#UnknownProfilePackageKeywords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfilePackageKeywords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Warning" title="pkgcheck.results.Warning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Warning</span></code></a></p>
+<p>Profile files include package keywords that don’t exist.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfilePackageKeywords.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfilePackageKeywords.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfilePackageKeywords.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'UnknownProfilePackageKeywords'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfilePackageKeywords.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfilePackageUse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">UnknownProfilePackageUse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#UnknownProfilePackageUse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfilePackageUse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Warning" title="pkgcheck.results.Warning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Warning</span></code></a></p>
+<p>Profile files include entries with USE flags that aren’t used on any matching packages.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfilePackageUse.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfilePackageUse.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfilePackageUse.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'UnknownProfilePackageUse'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfilePackageUse.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfileUse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">UnknownProfileUse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#UnknownProfileUse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfileUse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Warning" title="pkgcheck.results.Warning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Warning</span></code></a></p>
+<p>Profile files include USE flags that don’t exist.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfileUse.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfileUse.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfileUse.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'UnknownProfileUse'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfileUse.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfileUseExpand">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">UnknownProfileUseExpand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#UnknownProfileUseExpand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfileUseExpand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Warning" title="pkgcheck.results.Warning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Warning</span></code></a></p>
+<p>Profile includes nonexistent USE_EXPAND group(s).</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfileUseExpand.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfileUseExpand.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnknownProfileUseExpand.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'UnknownProfileUseExpand'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.UnknownProfileUseExpand.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnusedProfileDirs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">UnusedProfileDirs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#UnusedProfileDirs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.UnusedProfileDirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.ProfilesResult" title="pkgcheck.results.ProfilesResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.ProfilesResult</span></code></a>, <a class="reference internal" href="pkgcheck.results.html#pkgcheck.results.Warning" title="pkgcheck.results.Warning"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.results.Warning</span></code></a></p>
+<p>Unused profile directories detected.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnusedProfileDirs.desc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">desc</span></span><a class="headerlink" href="#pkgcheck.checks.profiles.UnusedProfileDirs.desc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Result description.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.UnusedProfileDirs.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'UnusedProfileDirs'</span></em><a class="headerlink" href="#pkgcheck.checks.profiles.UnusedProfileDirs.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.dir_parents">
+<span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">dir_parents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#dir_parents"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.dir_parents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yield all directory path parents excluding the root directory.</p>
+<p>Example:
+&gt;&gt;&gt; list(dir_parents(‘/root/foo/bar/baz’))
+[‘root/foo/bar’, ‘root/foo’, ‘root’]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pkgcheck.checks.profiles.verify_files">
+<span class="sig-prename descclassname"><span class="pre">pkgcheck.checks.profiles.</span></span><span class="sig-name descname"><span class="pre">verify_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">files</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/checks/profiles.html#verify_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.checks.profiles.verify_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator to register file verification methods.</p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/pkgcheck.checks.profiles.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pkgcheck master documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pkgcheck.checks.profiles module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2006-2021, pkgcheck contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.0.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+pkgcheck ci - scan repo for CI
+------------------------------
+
+.. include:: ci/_synopsis.rst
+.. include:: ci/_description.rst
+.. include:: ci/_options.rst
+.. include:: ci/_subcommands.rst

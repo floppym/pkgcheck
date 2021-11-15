@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>pkgcheck.addons.git module &#8212; pkgcheck master documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pkgcheck master documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pkgcheck.addons.git module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-pkgcheck.addons.git">
+<span id="pkgcheck-addons-git-module"></span><h1>pkgcheck.addons.git module<a class="headerlink" href="#module-pkgcheck.addons.git" title="Permalink to this headline">¶</a></h1>
+<p>Git specific support and addon.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitAddedRepo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.addons.git.</span></span><span class="sig-name descname"><span class="pre">GitAddedRepo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitAddedRepo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitAddedRepo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pkgcheck.addons.git.GitChangedRepo" title="pkgcheck.addons.git.GitChangedRepo"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.addons.git.GitChangedRepo</span></code></a></p>
+<p>Historical git repo consisting of added packages.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitAddon">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.addons.git.</span></span><span class="sig-name descname"><span class="pre">GitAddon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitAddon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitAddon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.addons.caches.html#pkgcheck.addons.caches.CachedAddon" title="pkgcheck.addons.caches.CachedAddon"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.addons.caches.CachedAddon</span></code></a></p>
+<p>Git repo support for various checks.</p>
+<p>Pkgcheck can create virtual package repos from a given git repo’s history
+in order to provide more info for checks relating to stable requests,
+outdated blockers, or local commits. These virtual repos are cached and
+updated every run if new commits are detected.</p>
+<p>Git repos must have a supported config in order to work properly.
+Specifically, pkgcheck assumes that the origin branch exists and tracks
+upstream.</p>
+<p>Additionally, the origin/HEAD ref must exist. If it doesn’t, running <code class="docutils literal notranslate"><span class="pre">git</span>
+<span class="pre">remote</span> <span class="pre">set-head</span> <span class="pre">origin</span> <span class="pre">master</span></code> or similar for other branches will create
+it.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitAddon.cache">
+<span class="sig-name descname"><span class="pre">cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">CacheData(type='git',</span> <span class="pre">file='git.pickle',</span> <span class="pre">version=5)</span></em><a class="headerlink" href="#pkgcheck.addons.git.GitAddon.cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitAddon.cached_repo">
+<span class="sig-name descname"><span class="pre">cached_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo_cls</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitAddon.cached_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitAddon.cached_repo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitAddon.commits">
+<span class="sig-name descname"><span class="pre">commits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitAddon.commits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitAddon.commits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitAddon.commits_repo">
+<span class="sig-name descname"><span class="pre">commits_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo_cls</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitAddon.commits_repo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitAddon.commits_repo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitAddon.gitignored">
+<span class="sig-name descname"><span class="pre">gitignored</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitAddon.gitignored"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitAddon.gitignored" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if a given path in a repository is matched by .gitignore settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitAddon.mangle_argparser">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mangle_argparser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitAddon.mangle_argparser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitAddon.mangle_argparser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add extra options and/or groups to the argparser.</p>
+<p>This hook is always triggered, even if the checker is not
+activated (because it runs before the commandline is parsed).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parser</strong> – an C{argparse.ArgumentParser} instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitAddon.pkg_history">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pkg_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbosity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitAddon.pkg_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitAddon.pkg_history" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create or update historical package data for a given commit range.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitAddon.update_cache">
+<span class="sig-name descname"><span class="pre">update_cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitAddon.update_cache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitAddon.update_cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update related cache and push updates to disk.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitCache">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.addons.git.</span></span><span class="sig-name descname"><span class="pre">GitCache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitCache"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pkgcheck.addons.caches.html#pkgcheck.addons.caches.DictCache" title="pkgcheck.addons.caches.DictCache"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.addons.caches.DictCache</span></code></a></p>
+<p>Dictionary-based cache that encapsulates git commit data.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitChangedRepo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.addons.git.</span></span><span class="sig-name descname"><span class="pre">GitChangedRepo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitChangedRepo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitChangedRepo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcore.repository.util.SimpleTree</span></code></p>
+<p>Historical git repo consisting of the latest changed packages.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitCommit">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.addons.git.</span></span><span class="sig-name descname"><span class="pre">GitCommit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">author</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">committer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pkgs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">snakeoil.mappings.ImmutableDict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitCommit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitCommit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Git commit objects.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitCommit.author">
+<span class="sig-name descname"><span class="pre">author</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pkgcheck.addons.git.GitCommit.author" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitCommit.commit_time">
+<span class="sig-name descname"><span class="pre">commit_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pkgcheck.addons.git.GitCommit.commit_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitCommit.committer">
+<span class="sig-name descname"><span class="pre">committer</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pkgcheck.addons.git.GitCommit.committer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitCommit.hash">
+<span class="sig-name descname"><span class="pre">hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pkgcheck.addons.git.GitCommit.hash" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitCommit.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span></em><a class="headerlink" href="#pkgcheck.addons.git.GitCommit.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitCommit.pkgs">
+<span class="sig-name descname"><span class="pre">pkgs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">snakeoil.mappings.ImmutableDict</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#pkgcheck.addons.git.GitCommit.pkgs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.addons.git.</span></span><span class="sig-name descname"><span class="pre">GitError</span></span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Generic git-related error.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitLog">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.addons.git.</span></span><span class="sig-name descname"><span class="pre">GitLog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitLog"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitLog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Iterator for decoded <cite>git log</cite> line output.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitModifiedRepo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.addons.git.</span></span><span class="sig-name descname"><span class="pre">GitModifiedRepo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitModifiedRepo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitModifiedRepo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pkgcheck.addons.git.GitChangedRepo" title="pkgcheck.addons.git.GitChangedRepo"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.addons.git.GitChangedRepo</span></code></a></p>
+<p>Historical git repo consisting of the latest modified packages.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitPkgChange">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.addons.git.</span></span><span class="sig-name descname"><span class="pre">GitPkgChange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pkgcore.ebuild.atom.atom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">old</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">pkgcore.ebuild.atom.atom</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitPkgChange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitPkgChange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Git package change objects.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitPkgChange.atom">
+<span class="sig-name descname"><span class="pre">atom</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pkgcore.ebuild.atom.atom</span></em><a class="headerlink" href="#pkgcheck.addons.git.GitPkgChange.atom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitPkgChange.commit">
+<span class="sig-name descname"><span class="pre">commit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pkgcheck.addons.git.GitPkgChange.commit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitPkgChange.commit_time">
+<span class="sig-name descname"><span class="pre">commit_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pkgcheck.addons.git.GitPkgChange.commit_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitPkgChange.old">
+<span class="sig-name descname"><span class="pre">old</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">pkgcore.ebuild.atom.atom</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pkgcheck.addons.git.GitPkgChange.old" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitPkgChange.status">
+<span class="sig-name descname"><span class="pre">status</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pkgcheck.addons.git.GitPkgChange.status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitRemovedRepo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.addons.git.</span></span><span class="sig-name descname"><span class="pre">GitRemovedRepo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitRemovedRepo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitRemovedRepo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pkgcheck.addons.git.GitChangedRepo" title="pkgcheck.addons.git.GitChangedRepo"><code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.addons.git.GitChangedRepo</span></code></a></p>
+<p>Historical git repo consisting of removed packages.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitRepoCommits">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.addons.git.</span></span><span class="sig-name descname"><span class="pre">GitRepoCommits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit_range</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitRepoCommits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitRepoCommits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.addons.git._ParseGitRepo</span></code></p>
+<p>Parse git log output into an iterator of commit objects.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pkgcheck.addons.git.GitRepoPkgs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pkgcheck.addons.git.</span></span><span class="sig-name descname"><span class="pre">GitRepoPkgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pkgcheck/addons/git.html#GitRepoPkgs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pkgcheck.addons.git.GitRepoPkgs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pkgcheck.addons.git._ParseGitRepo</span></code></p>
+<p>Parse git log output into an iterator of package change objects.</p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/pkgcheck.addons.git.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">pkgcheck master documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pkgcheck.addons.git module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2006-2021, pkgcheck contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.0.
+    </div>
+  </body>
+</html>
